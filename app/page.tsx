@@ -110,31 +110,31 @@ export default async function Home({
             </Container>
           </div>
         </section>
+        <section className="flex w-full flex-col gap-4">
+          <p className="text-2xl my-2  ">Forecast 7 day</p>
+          <div>
+            {firstDateForEachDate.map((d, i) => (
+              <ForecastWeatherDetail
+                key={i}
+                description={d?.weather[0].description ?? ""}
+                weatherIcon={d?.weather[0].icon ?? "01d"}
+                date=""
+                day={d ? formattedDate(d.dt_txt).split(" ")[0] : ""}
+                feels_like={d?.main.feels_like ?? 0}
+                temp={d?.main.temp ?? 0}
+                temp_max={d?.main.temp_max ?? 0}
+                temp_min={d?.main.temp_min ?? 0}
+                airPressure={`${d?.main.pressure} hPa `}
+                humidity={`${d?.main.humidity}% `}
+                sunrise={formattedTime(data.city.sunrise)}
+                sunset={formattedTime(data.city.sunset)}
+                visibility={`${convertToKm(d?.visibility ?? 10000)} `}
+                windSpeed={`${d?.wind.speed ?? 1.64} `}
+              />
+            ))}
+          </div>
+        </section>{" "}
       </main>
-      <section className="flex w-full flex-col gap-4">
-        <p className="text-2xl my-2  ">Forecast 7 day</p>
-        <div>
-          {firstDateForEachDate.map((d, i) => (
-            <ForecastWeatherDetail
-              key={i}
-              description={d?.weather[0].description ?? ""}
-              weatherIcon={d?.weather[0].icon ?? "01d"}
-              date=""
-              day={d ? formattedDate(d.dt_txt).split(" ")[0] : ""}
-              feels_like={d?.main.feels_like ?? 0}
-              temp={d?.main.temp ?? 0}
-              temp_max={d?.main.temp_max ?? 0}
-              temp_min={d?.main.temp_min ?? 0}
-              airPressure={`${d?.main.pressure} hPa `}
-              humidity={`${d?.main.humidity}% `}
-              sunrise={formattedTime(data.city.sunrise)}
-              sunset={formattedTime(data.city.sunset)}
-              visibility={`${convertToKm(d?.visibility ?? 10000)} `}
-              windSpeed={`${d?.wind.speed ?? 1.64} `}
-            />
-          ))}
-        </div>
-      </section>
     </Suspense>
   );
 }
