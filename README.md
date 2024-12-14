@@ -4,7 +4,7 @@ This is a modern weather application built with
 
 **TypeScript**, **Next.js**, and **TailwindCSS**. The app provides real-time weather updates, location-based searches, and an interactive user interface.
 
-Please find the live site [](here)
+Please find the live site [here](https://weather-app-x8x8.vercel.app/)
 ## Features
 
 - 🌍 **Geolocation Support**: Automatically detects your location to provide weather details.
