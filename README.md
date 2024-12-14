@@ -4,6 +4,7 @@ This is a modern weather application built with
 
 **TypeScript**, **Next.js**, and **TailwindCSS**. The app provides real-time weather updates, location-based searches, and an interactive user interface.
 
+Please find the live site [](here)
 ## Features
 
 - 🌍 **Geolocation Support**: Automatically detects your location to provide weather details.
@@ -27,19 +28,19 @@ Ensure you have the following installed:
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/aimansae
+git clone https://github.com/aimansae/weather-app
 cd weather-app
 npm install
 # or
 yarn install
 ```
 ## Deployment
-To deploy the app, you can use platforms like Vercel:
+To deploy the app, you can use platforms like [vercel](https://app.vercel.com):
 
 Push your code to a GitHub repository.
-Connect the repository to your Vercel account.
-Add the environment variable (NEXT_PUBLIC_WEATHER_KEY) in Vercel's settings.
-Deploy the app and access it at the URL provided by Vercel.
+Connect the repository to your vercel account.
+Add the environment variable (NEXT_PUBLIC_WEATHER_KEY) in vercel's settings.
+Deploy the app and access it at the URL provided by vercel.
 For more details, see Next.js Deployment Documentation.
 
 Learn More
