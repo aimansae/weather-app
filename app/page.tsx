@@ -28,10 +28,9 @@ export default async function Home({
   );
 
   const data: WeatherDataType = await res.json();
-  // if (!data?.list || data.list.length === 0) {
-  //   // If the list is empty or undefined, you can show a fallback
-  //   return <div>No weather data available</div>;
-  // }
+  if (!data?.list || data.list.length === 0) {
+    return <div>No weather data available</div>;
+  }
   const firstData = data?.list[0];
   console.log("DATE", typeof firstData.dt_txt);
   console.log("VISIBILITY TYPE", typeof firstData.visibility);
