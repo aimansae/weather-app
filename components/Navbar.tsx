@@ -27,29 +27,48 @@ const Navbar = ({ location }: { location: string }) => {
   const handleGeolocation = async () => {
     console.log("locationClicked");
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
-        const { latitude, longitude } = position.coords;
-        try {
-          const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
-          );
-          const data = await res.json();
-          console.log("Logging ", data);
-          if (data && data.name) {
-            setUserLocation(data.name);
-            setIsGeolocationSelected(true);
-            const newSearchParams = new URLSearchParams(
-              searchParams.toString()
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          try {
+            const res = await fetch(
+              `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
             );
-            newSearchParams.set("search", data.name);
-            router.push(`/?${newSearchParams.toString()}`);
-            console.log("Logging user Location", userLocation);
+            const data = await res.json();
+
+            if (data && data.name) {
+              setUserLocation(data.name);
+              setIsGeolocationSelected(true);
+              const newSearchParams = new URLSearchParams(
+                searchParams.toString()
+              );
+              newSearchParams.set("search", data.name);
+              router.push(`/?${newSearchParams.toString()}`);
+              console.log("Logging user Location", userLocation);
+            }
+          } catch (error) {
+            console.error("Error fetching weather data:", error);
           }
-        } catch (error) {
-          console.error("Error fetching weather data:", error);
+        },
+        (error) => {
+          // Handle errors (e.g., user denies access)
+          console.error("Error getting location:", error.message);
+          if (error.code === 1) {
+            alert(
+              "Location access denied. Please enable it to use this feature."
+            );
+          } else if (error.code === 2) {
+            alert("Location unavailable. Please try again.");
+          } else if (error.code === 3) {
+            alert("Request timed out. Please try again.");
+          }
+        },
+        {
+          enableHighAccuracy: true, // Use high accuracy for better results
+          timeout: 10000, // Timeout in milliseconds
+          maximumAge: 0, // Do not use cached location
         }
-        console.log("User's location:", latitude, longitude);
-      });
+      );
     } else {
       console.log("Geolocation not available");
     }

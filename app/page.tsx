@@ -32,8 +32,6 @@ export default async function Home({
     return <div>No weather data available</div>;
   }
   const firstData = data?.list[0];
-  console.log("DATE", typeof firstData.dt_txt);
-  console.log("VISIBILITY TYPE", typeof firstData.visibility);
   const uniqueDates = [
     ...new Set(
       data?.list.map(

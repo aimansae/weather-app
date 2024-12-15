@@ -19,7 +19,6 @@ const Search = ({ className, disableSearch }: SearchType) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState("");
-  console.log("current", searchParams);
 
   //search input
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +32,6 @@ const Search = ({ className, disableSearch }: SearchType) => {
       setSuggestions([]);
       setError("");
     }
-    console.log(search);
   };
   // submit form
   const handleSubmit = (e: FormEvent) => {
@@ -72,7 +70,6 @@ const Search = ({ className, disableSearch }: SearchType) => {
 
       const data = await res.json();
 
-      console.log("LOGGING FOR CITY ", data);
       if (data.list && data.list.length > 0) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const locationNames = data.list.map((item: any) => item.name);
@@ -92,7 +89,6 @@ const Search = ({ className, disableSearch }: SearchType) => {
   };
   const handleSuggestionClick = (value: string) => {
     setSearch(value);
-    console.log("Selected city");
     setShowSuggestions(false);
   };
   return (
