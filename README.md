@@ -48,15 +48,16 @@ For full details, refer to the Next.js Deployment Docs.
 
 Here are a few improvements planned for future updates:
 
-- 7-day forecast view with daily breakdown
+- 7 day forecast view with daily breakdown
 - Hourly weather updates
 - Dark mode toggle
-- Better responsive UI supporting all devices
+- Better responsive UI supporting all devices and search dropdown
 - Weather condition icons and animations
 - Auto-refresh for live updates
 - Favorites list for saved cities
 - Improve loading skeleton
 - Unit toggle between Celsius and Fahrenheit
+- Different languages support
 - Testing
 
 ## Learn More
