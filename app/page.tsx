@@ -23,8 +23,19 @@ export default async function Home({
     ? searchParams?.search[0] || "London"
     : searchParams?.search || "London";
 
+  const geoRes = await fetch(
+    `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+  );
+  const geoData = await geoRes.json();
+  const { lat, lon } = geoData[0];
+
+  if (!geoData || !Array.isArray(geoData) || geoData.length === 0) {
+    return <div className="text-center mt-10">City not found.</div>;
+  }
+  // console.log("Geo data:", geoData);
+
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
   );
 
   const data: WeatherDataType = await res.json();
@@ -32,6 +43,7 @@ export default async function Home({
     return <div>No weather data available</div>;
   }
   const firstData = data?.list[0];
+
   const uniqueDates = [
     ...new Set(
       data?.list.map(
