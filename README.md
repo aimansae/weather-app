@@ -1,18 +1,17 @@
 # Weather App 🌤️
 
-This is a modern weather application built with 
+This is a modern weather application built with  **TypeScript**, **Next.js**, and **TailwindCSS**. The app provides real-time weather updates, location-based searches, and an interactive user interface.
 
-**TypeScript**, **Next.js**, and **TailwindCSS**. The app provides real-time weather updates, location-based searches, and an interactive user interface.
-
+![Weather App preview](/public/appPreview.PNG)
 Please find the live site [here](https://weather-app-x8x8.vercel.app/)
+
 ## Features
 
-- 🌍 **Geolocation Support**: Automatically detects your location to provide weather details.
-- 🔎 **Search Functionality**: Search for weather updates by city name.
-- 📱 **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices using TailwindCSS.
-- ⚡ **Fast Performance**: Built on Next.js for server-side rendering and fast client-side navigation.
+- **Geolocation Support**: Automatically detects your location to provide weather details.
+- **Search Functionality**: Search for weather updates by city name.
+-**Responsive Design**: Fully optimized for mobile, tablet, and desktop devices using TailwindCSS.
+-**Fast Performance**: Built on Next.js for server-side rendering and fast client-side navigation.
 
----
 
 ## Getting Started
 
@@ -34,21 +33,36 @@ npm install
 # or
 yarn install
 ```
+
 ## Deployment
-To deploy the app, you can use platforms like [vercel](https://app.vercel.com):
+You can deploy the app using [Vercel](https://vercel.com/):
 
-Push your code to a GitHub repository.
-Connect the repository to your vercel account.
-Add the environment variable (NEXT_PUBLIC_WEATHER_KEY) in vercel's settings.
-Deploy the app and access it at the URL provided by vercel.
-For more details, see Next.js Deployment Documentation.
+- Push your code to a GitHub repository.
+- Connect the repository to your Vercel account.
+- Add the required environment variable:
+NEXT_PUBLIC_WEATHER_KEY (your OpenWeatherMap API key).
+- Deploy and access your app at the provided URL.
+For full details, refer to the Next.js Deployment Docs.
 
-Learn More
+## Future Features
+
+Here are a few improvements planned for future updates:
+
+- 7-day forecast view with daily breakdown
+- Hourly weather updates
+- Dark mode toggle
+- Better responsive UI supporting all devices
+- Weather condition icons and animations
+- Auto-refresh for live updates
+- Favorites list for saved cities
+- Improve loading skeleton
+- Unit toggle between Celsius and Fahrenheit
+- Testing
+
+## Learn More
 To learn more about the tools and frameworks used:
 
 [Next.js Documentation](https://nextjs.org/docs)
 [Tailwind Css Documentation](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 [OpenWeather API Documentation](https://openweathermap.org/api)
 
-
-**Feedback and contributions are welcome!&&

@@ -25,7 +25,6 @@ const Navbar = ({ location }: { location: string }) => {
     }
   }, [searchParams]);
   const handleGeolocation = async () => {
-    console.log("locationClicked");
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -44,7 +43,6 @@ const Navbar = ({ location }: { location: string }) => {
               );
               newSearchParams.set("search", data.name);
               router.push(`/?${newSearchParams.toString()}`);
-              console.log("Logging user Location", userLocation);
             }
           } catch (error) {
             console.error("Error fetching weather data:", error);
