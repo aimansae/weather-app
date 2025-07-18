@@ -67,3 +67,7 @@ To learn more about the tools and frameworks used:
 [Tailwind Css Documentation](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 [OpenWeather API Documentation](https://openweathermap.org/api)
 
+## Credits
+
+This app was inspired by Free Code Camp [Beginner Web Dev Project Tutorial – Weather App with Next.js, Tailwind CSS, and TypeScript](https://www.youtube.com/watch?v=KkC_wYM_Co4&t=7398s)
+
