@@ -117,30 +117,19 @@ One of the trickiest parts was understanding how the structure of the response w
 
 Another challenging area was implementing the search functionality. Initially, it was returning multiple results even when I only wanted the first match. After some adjustments, I managed to make it return just the first matching result, which made the experience much smoother and more precise.
 
-🔮 Future Features
-Planned improvements include:
+## Future Features
 
-7-day forecast view with daily breakdown
-
-Hourly weather timeline
-
-Dark mode toggle
-
-Enhanced responsive layout and dropdown UX
-
-Weather animations/icons based on condition
-
-Auto-refresh for live updates
-
-Favorites list
-
-Better loading experience
-
-Temperature unit toggle (°C/°F)
-
-Multi-language support
-
-Unit testing with Jest
+- Planned improvements include:
+- 7-day forecast view with daily breakdown
+- Hourly weather timeline
+- Dark mode toggle
+- Enhanced responsive layout and dropdown UX
+- Weather animations/icons based on condition
+- Auto-refresh for live updates
+- Favorites list
+- Better loading experience
+- Multi-language support
+- Unit testing with Jest
 
  
 
